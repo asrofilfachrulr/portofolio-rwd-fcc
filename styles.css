@@ -1,0 +1,15 @@
+@media (min-width: 1440px) {
+  html {
+    font-size: 36px;
+  }
+}
+
+#welcome-section {
+  height: 100vh;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
