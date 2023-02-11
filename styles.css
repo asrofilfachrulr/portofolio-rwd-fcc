@@ -66,6 +66,9 @@ body {
   #navbar > * {
     display: none;
   }
+  h2 {
+    font-size: 24px;
+  }
 }
 
 main {
@@ -141,7 +144,7 @@ section {
   position: absolute;
   left: -1.5rem;
   top: 6rem;
-  height: 70vw;
+  min-height: min(400px, 70vw);
   background: linear-gradient(
     139.8deg,
     #ffe6fe 1.24%,
@@ -152,21 +155,22 @@ section {
   backdrop-filter: blur(12.5px);
   overflow: scroll hidden;
   gap: 1.25rem;
+  padding: 2em 1em;
 }
 
 .project-card {
   flex-direction: column;
   background-color: white;
-  height: minmax(300px, 400px);
-  min-height: fit-content;
-  width: minmax(50%, 65%);
+  min-height: min(270px, 80vw);
+  min-width: min(180px, 65vw);
   filter: drop-shadow(0px 0px 5px rgba(73, 79, 239, 0.27));
   border-radius: 0% 0% 10px 10px;
 }
 
 .card-footer {
-  max-height: 20%;
-  min-height: fit-content;
+  max-height: 15%;
+  min-height: 15%;
+  /* flex-grow: 1; */
 }
 
 .project-img {
@@ -175,13 +179,13 @@ section {
 }
 
 .project-card .button {
+  display: block;
   font-size: 0.75em;
   width: 50%;
   max-height: 100% !important;
   min-height: 100%;
   border-radius: 0;
   text-align: center;
-  vertical-align: middle;
 }
 
 .button.left {
@@ -203,7 +207,7 @@ section {
 }
 
 .container {
-  display: flex;
+  display: flex !important;
 }
 
 .container-center {
@@ -219,8 +223,12 @@ section {
   justify-content: space-between;
 }
 
+.flex-justify-center {
+  justify-content: center !important;
+}
+
 .flex-align-center {
-  align-items: center;
+  align-items: center !important;
 }
 
 .flex-align-end {
