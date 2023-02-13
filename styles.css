@@ -32,6 +32,14 @@
     #16038b 91.16%
   );
 
+  --clr-gradient-bg: linear-gradient(
+    139.8deg,
+    #ffe6fe 1.24%,
+    rgba(239, 239, 239, 0.921875) 20.14%,
+    rgba(249, 238, 249, 0.71875) 48.04%,
+    #ffe4ff 87.64%
+  );
+
   --section-padding: 1rem;
 }
 
@@ -79,7 +87,7 @@ body {
   height: 65px;
   background-color: var(--clr-bg-navbar);
   z-index: 99;
-  box-shadow: 0 1px 5px 0 var(--clr-primary-dark);
+  box-shadow: 0 0 5px 0 var(--clr-primary-dark);
 }
 
 ul,
@@ -126,7 +134,7 @@ li {
 
 @media (max-width: 576px) {
   h2 {
-    font-size: 27px;
+    font-size: 24px;
   }
 }
 
@@ -170,26 +178,22 @@ section:not(#projects) {
 #welcome-section::after {
   content: url("https://img.icons8.com/metro/26/6900aa/double-down.png");
   position: absolute;
-  bottom: 2em;
+  bottom: 4em;
   width: 24px;
   height: 24px;
-  animation: blink ease-in-out infinite;
+  animation: vertical-alternate 3s ease-in-out infinite;
   transition: all 200ms;
 }
 
-@keyframes blink {
+@keyframes vertical-alternate {
   0% {
-    transform: scale(0.9);
-    background-color: red;
+    transform: translate(0);
   }
-  50% {
-    transform: scale(1);
+  25% {
+    transform: translate(0);
   }
   75% {
-    transform: scale(1.05);
-  }
-  90% {
-    transform: scale(1);
+    transform: translateY(2rem);
   }
 }
 
@@ -275,13 +279,7 @@ section:not(#projects) {
 .project-tile {
   width: 100%;
   min-height: 500px;
-  background: linear-gradient(
-    139.8deg,
-    #ffe6fe 1.24%,
-    rgba(239, 239, 239, 0.921875) 20.14%,
-    rgba(249, 238, 249, 0.71875) 48.04%,
-    #ffe4ff 87.64%
-  );
+  background: var(--clr-gradient-bg);
   backdrop-filter: blur(12.5px);
   overflow: scroll hidden;
   gap: 1.25rem;
