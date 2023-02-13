@@ -4,6 +4,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
 
 @media (min-width: 1440px) {
@@ -19,6 +21,7 @@
     #f8f2ff 15%,
     #f6f1ff 30%
   );
+  --clr-bg-navbar: #f9f0ff;
 
   --clr-primary: #6900aa;
   --clr-primary-dark: #400565;
@@ -49,6 +52,11 @@ span {
   line-height: 1.6em;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   background: var(--clr-bg);
   max-width: 100vh;
@@ -57,19 +65,56 @@ body {
 }
 
 #navbar {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   display: block;
-  height: 100px;
+  height: 75px;
+  background-color: var(--clr-bg-navbar);
+  z-index: 99;
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+  list-style-position: inside;
+}
+
+#navbar ul {
+  width: 100%;
+  height: 100%;
+  gap: 1em;
+  color: var(--clr-primary);
+  align-items: center;
+}
+
+#navbar li {
+  padding: 0.5em 0.75em;
+  transition: 200ms all ease-in-out;
+  border-radius: 10px;
+}
+
+#navbar li:hover {
+  background-color: var(--clr-primary);
+  color: white;
 }
 
 @media (max-width: 576px) {
-  #navbar > * {
-    display: none;
-  }
   h2 {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr minmax(45ch, 60ch) 1fr;
+  }
+  section {
+    grid-column: 2/2;
   }
 }
 
@@ -109,6 +154,12 @@ section:not(#projects) {
   cursor: pointer;
   position: relative;
   font-size: 1rem;
+  transition: 200ms transform ease-in-out;
+}
+
+.button:focus,
+.button:active {
+  transform: scale(0.95);
 }
 
 .button-dark {
@@ -139,9 +190,22 @@ section:not(#projects) {
   vertical-align: middle;
 }
 
+#projects {
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+@media (min-width: 768px) {
+  #projects {
+    grid-column: 1/-1;
+    padding-inline-start: 2em;
+  }
+}
+
 .project-tile {
   width: 100%;
-  height: min(400px, 70vh);
+  min-height: 500px;
   background: linear-gradient(
     139.8deg,
     #ffe6fe 1.24%,
@@ -152,8 +216,13 @@ section:not(#projects) {
   backdrop-filter: blur(12.5px);
   overflow: scroll hidden;
   gap: 1.25rem;
-  padding: 2em 1em;
+  padding: 1em 1em;
+  border-radius: 20px;
   flex-wrap: nowrap;
+}
+
+.project-tile::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 576px) {
@@ -162,24 +231,46 @@ section:not(#projects) {
   }
 }
 
-.project-card {
-  flex-direction: column;
+.card {
+  display: grid;
+  grid-template-rows: 3fr 2fr 1fr;
   background-color: white;
-  height: min(300px, 80%); /* min-height / height ?*/
-  min-width: 55%;
+  min-height: fit-content;
+  height: 400px; /* min-height / height ?*/
+  min-width: 200px;
   filter: drop-shadow(0px 0px 5px rgba(73, 79, 239, 0.27));
-  border-radius: 0% 0% 10px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card > * {
+  padding-inline: 0.75em;
+}
+
+.card-header-img {
+  padding: 0;
+}
+
+.card-body > p {
+  font-size: 1rem;
 }
 
 .card-footer {
-  margin-top: 1em;
+  padding-bottom: 1em;
+  gap: 1em;
 }
 
 .project-img {
   width: 100%;
-  max-height: 70%;
+  height: 150px;
   object-fit: cover;
   object-position: top;
+}
+
+.card-footer .button {
+  display: inline;
+  font-size: 1rem;
+  margin: 0;
 }
 
 /* utility class */

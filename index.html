@@ -20,10 +20,13 @@
   <body>
     <header>
       <nav id="navbar">
-        <ul>
+        <ul class="container flex-justify-center">
           <li>
-            <a id="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#about">About Me</a>
           </li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#expertise">Expertise</a></li>
+          <li><a class="nav-link" href="#contact">Contacts</a></li>
         </ul>
       </nav>
     </header>
@@ -41,7 +44,7 @@
         <h2 class="text-center mb-1">
           About <span class="cursive primary-clr">Me</span>
         </h2>
-        <div class="container dir-default start gap-0-75">
+        <div class="container dir-default gap-0-75">
           <p class="primary-dark">
             I’m a fresh entry to web developer world! Inshaallah I’m super ready
             to challenge any problems with the effort-based product solutions
@@ -79,17 +82,122 @@
           <span class="primary-clr">Projects</span>
         </h2>
         <div class="project-tile container flex-align-center">
-          <div class="project-card">
-            <img
-              class="project-img"
-              src="./assets/project-img-happyzt.png"
-              alt=""
-            />
+          <div class="card project-card">
+            <div class="card-header card-header-img">
+              <img
+                class="project-img"
+                src="./assets/project-img-happyzt.png"
+                alt=""
+              />
+            </div>
+            <div class="card-body">
+              <h3>Happyzt</h3>
+              <p>Product Landing Page</p>
+            </div>
+            <div class="card-footer container">
+              <button
+                class="button button-dark"
+                role="button"
+                style="flex-grow: 1"
+              >
+                <a
+                  href="https://github.com/asrofilfachrulr/product-landing-page-fcc"
+                  target="_blank"
+                  >Source Code</a
+                >
+              </button>
+              <button class="button button-light" role="button">
+                <a
+                  href="https://asrofilfachrulr.github.io/product-landing-page-fcc"
+                  target="_blank"
+                  >Page</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="card project-card">
+            <div class="card-header card-header-img">
+              <img
+                class="project-img"
+                src="./assets/project-img-cart.png"
+                alt=""
+              />
+            </div>
+            <div class="card-body">
+              <h3>Cart</h3>
+              <p>Keranjang Belanja</p>
+            </div>
             <div class="card-footer container">
               <button class="button button-dark" role="button">
-                Source Code
+                <a
+                  href="https://github.com/asrofilfachrulr/keranjang-belanja-vue"
+                  target="_blank"
+                  >Source Code</a
+                >
               </button>
-              <button class="button button-light" role="button">Page</button>
+              <button class="button button-light" role="button">
+                <a href="https://cart-vuejs.vercel.app/" target="_blank"
+                  >Page</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="card project-card">
+            <div class="card-header card-header-img">
+              <img
+                class="project-img"
+                src="./assets/project-img-calculator.png"
+                alt=""
+              />
+            </div>
+            <div class="card-body">
+              <h3>Calculator</h3>
+              <p>Simple Calculator App</p>
+            </div>
+            <div class="card-footer container">
+              <button class="button button-dark" role="button">
+                <a
+                  href="https://github.com/asrofilfachrulr/calculator-app"
+                  target="_blank"
+                  >Source Code</a
+                >
+              </button>
+              <button class="button button-light" role="button">
+                <a
+                  href="https://cool-mousse-2d5f12.netlify.app/"
+                  target="_blank"
+                  >Page</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="card project-card">
+            <div class="card-header card-header-img">
+              <img
+                class="project-img"
+                src="./assets/project-img-documentation.png"
+                alt=""
+              />
+            </div>
+            <div class="card-body">
+              <h3>Dokumenkeun</h3>
+              <p>Bash Technical Documentation in Sundanese</p>
+            </div>
+            <div class="card-footer container">
+              <button class="button button-dark" role="button">
+                <a
+                  href="https://github.com/asrofilfachrulr/technical-documentation-fcc"
+                  target="_blank"
+                  >Source Code</a
+                >
+              </button>
+              <button class="button button-light" role="button">
+                <a
+                  href="https://asrofilfachrulr.github.io/technical-documentation-fcc/"
+                  target="_blank"
+                  >Page</a
+                >
+              </button>
             </div>
           </div>
         </div>
