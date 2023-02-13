@@ -142,7 +142,7 @@ li {
   main {
     display: grid;
     min-width: 100%;
-    grid-template-columns: 1fr minmax(45ch, 60ch) 1fr;
+    grid-template-columns: 1fr minmax(60ch, 80ch) 1fr;
   }
   section {
     grid-column: 2/3;
@@ -199,9 +199,17 @@ section:not(#projects) {
 
 #about p {
   text-align: justify;
+  flex-basis: 100%;
+}
+
+@media (max-width: 768px) {
+  #about .container {
+    flex-direction: column;
+  }
 }
 
 #about #cv-link {
+  display: block;
   margin-inline: auto;
   min-width: 65%;
   text-align: center;
@@ -277,7 +285,7 @@ section:not(#projects) {
 }
 
 .project-tile {
-  width: 100%;
+  width: fit-content;
   min-height: 500px;
   background: var(--clr-gradient-bg);
   backdrop-filter: blur(12.5px);
@@ -333,6 +341,11 @@ section:not(#projects) {
   height: 250px;
   object-fit: cover;
   object-position: top;
+  transition: 200ms transform ease-in-out;
+}
+
+.project-img:hover {
+  transform: scale(1.05);
 }
 
 .card-footer .button {
