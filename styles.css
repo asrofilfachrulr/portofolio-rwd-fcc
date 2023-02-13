@@ -22,6 +22,8 @@
 
   --clr-primary: #6900aa;
   --clr-primary-dark: #400565;
+
+  --section-padding: 1rem;
 }
 
 html {
@@ -71,11 +73,8 @@ body {
   }
 }
 
-main {
-  padding-inline: 1.5rem;
-}
-
-section {
+section:not(#projects) {
+  padding-inline: var(--section-padding);
   margin-bottom: 5rem;
 }
 
@@ -102,13 +101,14 @@ section {
 }
 
 .button {
-  padding: 0.5em;
+  border: none;
+  padding: 0.5em 0.75em;
   border-radius: 5px;
   text-decoration: none;
   display: inline;
-  width: fit-content;
   cursor: pointer;
   position: relative;
+  font-size: 1rem;
 }
 
 .button-dark {
@@ -140,11 +140,8 @@ section {
 }
 
 .project-tile {
-  width: calc(100% + 3rem);
-  position: absolute;
-  left: -1.5rem;
-  top: 6rem;
-  min-height: min(400px, 70vw);
+  width: 100%;
+  height: min(400px, 70vh);
   background: linear-gradient(
     139.8deg,
     #ffe6fe 1.24%,
@@ -156,44 +153,33 @@ section {
   overflow: scroll hidden;
   gap: 1.25rem;
   padding: 2em 1em;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 576px) {
+  #projects {
+    flex-direction: column;
+  }
 }
 
 .project-card {
   flex-direction: column;
   background-color: white;
-  min-height: min(270px, 80vw);
-  min-width: min(180px, 65vw);
+  height: min(300px, 80%); /* min-height / height ?*/
+  min-width: 55%;
   filter: drop-shadow(0px 0px 5px rgba(73, 79, 239, 0.27));
   border-radius: 0% 0% 10px 10px;
 }
 
 .card-footer {
-  max-height: 15%;
-  min-height: 15%;
-  /* flex-grow: 1; */
+  margin-top: 1em;
 }
 
 .project-img {
-  min-width: 50vw;
+  width: 100%;
+  max-height: 70%;
   object-fit: cover;
-}
-
-.project-card .button {
-  display: block;
-  font-size: 0.75em;
-  width: 50%;
-  max-height: 100% !important;
-  min-height: 100%;
-  border-radius: 0;
-  text-align: center;
-}
-
-.button.left {
-  border-bottom-left-radius: 10px;
-}
-
-.button.right {
-  border-bottom-right-radius: 10px;
+  object-position: top;
 }
 
 /* utility class */
