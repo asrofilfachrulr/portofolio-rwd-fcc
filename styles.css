@@ -287,7 +287,7 @@ section:not(#projects) {
 }
 
 .project-tile {
-  width: fit-content;
+  width: 100%;
   min-height: 500px;
   background: var(--clr-gradient-bg);
   backdrop-filter: blur(12.5px);
@@ -296,6 +296,12 @@ section:not(#projects) {
   padding: 1em 1em;
   border-radius: 20px;
   flex-wrap: nowrap;
+}
+
+@media (min-width: 768px) {
+  .project-tile {
+    width: fit-content;
+  }
 }
 
 .project-tile::-webkit-scrollbar {
@@ -358,7 +364,7 @@ section:not(#projects) {
 
 #expertise-tile {
   background-color: var(--clr-gradient-bg);
-  min-height: 400px;
+  min-height: 350px;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -366,20 +372,69 @@ section:not(#projects) {
   justify-items: center;
 }
 
+#expertise-tile .col {
+  cursor: pointer;
+  transition: 200ms all ease-in-out;
+}
+
+#expertise-tile .col:hover,
+#expertise-tile .col:active {
+  background: var(--clr-gradient-bg);
+}
+
+#expertise-tile .col {
+  display: block;
+  width: 100%;
+  min-width: fit-content;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+#expertise-tile .col-1 {
+  border-bottom: 1px solid rgba(153, 50, 216, 0.13);
+}
+#expertise-tile .col-2 {
+  border-right: 1px solid rgba(153, 50, 216, 0.13);
+  border-bottom: 1px solid rgba(153, 50, 216, 0.13);
+  border-left: 1px solid rgba(153, 50, 216, 0.13);
+}
+#expertise-tile .col-3 {
+  border-bottom: 1px solid rgba(153, 50, 216, 0.13);
+}
+#expertise-tile .col-5 {
+  border-left: 1px solid rgba(153, 50, 216, 0.13);
+  border-right: 1px solid rgba(153, 50, 216, 0.13);
+}
+
 #expertise-tile .tile {
   background-color: white;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px #ebd5f9, 0px 4px 40px rgba(121, 82, 179, 0.37);
+  transition: 300ms all ease-in-out;
 }
 
 #expertise-tile .tile img {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
+}
+
+@media (max-width: 550px) {
+  #expertise-tile .tile {
+    width: 70px;
+    height: 70px;
+  }
+
+  #expertise-tile .tile img {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* utility class */
