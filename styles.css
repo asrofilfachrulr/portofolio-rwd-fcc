@@ -26,6 +26,12 @@
   --clr-primary: #6900aa;
   --clr-primary-dark: #400565;
 
+  --clr-gradient-accent: linear-gradient(
+    87.54deg,
+    #e31390 -1.33%,
+    #16038b 91.16%
+  );
+
   --section-padding: 1rem;
 }
 
@@ -34,12 +40,12 @@ html {
   font-size: 16px;
 }
 
-::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: transparent;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: var(--clr-primary);
   border-radius: 20px;
 }
@@ -73,7 +79,7 @@ body {
   height: 65px;
   background-color: var(--clr-bg-navbar);
   z-index: 99;
-  box-shadow: 0 1px 5px 0 var(--clr-primary);
+  box-shadow: 0 1px 5px 0 var(--clr-primary-dark);
 }
 
 ul,
@@ -112,18 +118,15 @@ li {
   border-radius: 5px;
 }
 
-#navbar li:hover {
-  background: linear-gradient(
-    90deg,
-    var(--clr-primary),
-    var(--clr-primary-dark)
-  );
+#navbar li:hover,
+#navbar li:active {
+  background: var(--clr-gradient-accent);
   color: white;
 }
 
 @media (max-width: 576px) {
   h2 {
-    font-size: 24px;
+    font-size: 27px;
   }
 }
 
@@ -138,9 +141,19 @@ li {
   }
 }
 
+.gradient-accent-text {
+  background: var(--clr-gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+section {
+  margin-bottom: 5rem;
+}
+
 section:not(#projects) {
   padding-inline: var(--section-padding);
-  margin-bottom: 5rem;
 }
 
 #welcome-section {
@@ -152,6 +165,32 @@ section:not(#projects) {
 
 #welcome-section .text-name {
   font-size: 2em;
+}
+
+#welcome-section::after {
+  content: url("https://img.icons8.com/metro/26/6900aa/double-down.png");
+  position: absolute;
+  bottom: 2em;
+  width: 24px;
+  height: 24px;
+  animation: blink ease-in-out infinite;
+  transition: all 200ms;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(0.9);
+    background-color: red;
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  90% {
+    transform: scale(1);
+  }
 }
 
 #about p {
@@ -174,7 +213,7 @@ section:not(#projects) {
   cursor: pointer;
   position: relative;
   font-size: 1rem;
-  transition: 300ms all ease-in-out;
+  transition: 350ms all ease-in-out;
 }
 
 .button:focus,
@@ -187,6 +226,11 @@ section:not(#projects) {
   background-color: var(--clr-primary);
 }
 
+.button-dark:hover {
+  background-color: var(--clr-primary-dark);
+  color: white;
+}
+
 .button-light {
   color: var(--clr-primary);
   background-color: transparent;
@@ -195,11 +239,7 @@ section:not(#projects) {
 }
 
 .button-light:hover {
-  background: linear-gradient(
-    90deg,
-    var(--clr-primary),
-    var(--clr-primary-dark)
-  );
+  background: var(--clr-primary-dark);
   color: white;
 }
 
@@ -372,6 +412,14 @@ section:not(#projects) {
 
 .mb-2 {
   margin-bottom: 2em;
+}
+
+.mv-1 {
+  margin-block: 1rem;
+}
+
+.mv-2 {
+  margin-block: 2rem;
 }
 
 .text-center {
