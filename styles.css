@@ -303,7 +303,7 @@ section:not(#projects) {
   #projects {
     grid-column: 1/-1;
     padding-inline-start: 3em;
-    gap: 2rem;
+    gap: 5rem;
   }
 }
 
