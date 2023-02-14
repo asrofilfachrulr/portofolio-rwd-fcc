@@ -32,7 +32,7 @@
     #16038b 91.16%
   );
 
-  --clr-gradient-accent-border: #4d078c;
+  --clr-gradient-accent-border: rgba(112, 10, 141, 0.65);
 
   --clr-gradient-bg: linear-gradient(
     139.8deg,
@@ -269,7 +269,7 @@ section:not(#projects) {
 .button-light {
   background-color: transparent;
   padding-block: calc(0.5em - 1px);
-  border: 1px solid var(--clr-gradient-accent-border);
+  border: 2px solid var(--clr-gradient-accent-border);
 }
 
 .button:hover {
@@ -465,8 +465,54 @@ section:not(#projects) {
 
 footer {
   background: var(--clr-gradient-bg);
-  min-height: 400px;
+  height: 300px;
   width: 100%;
+}
+
+footer > #contact {
+  padding: 1em;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 1.5rem;
+}
+
+footer > #contact > #contact-tiles {
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: start;
+  align-items: center;
+  max-width: max(400px, 50%);
+}
+
+footer > #contact > #contact-tiles img {
+  width: 36px;
+  height: 36px;
+  aspect-ratio: 1;
+  object-fit: fill;
+}
+
+footer > #contact > #mail-btn {
+  width: 100%;
+  max-width: 500px;
+  height: 3em;
+}
+
+footer > #contact > #mail-btn > svg {
+  position: absolute;
+  right: 1em;
+  top: 25%;
+}
+
+@media (min-width: 768px) {
+  footer > #contact {
+    padding: 1em;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 2rem;
+  }
+  footer > #contact > #contact-tiles img {
+    width: 42px;
+    height: 42px;
+  }
 }
 
 /* utility class */
@@ -544,6 +590,10 @@ footer {
   margin-bottom: 2em;
 }
 
+.mb-4 {
+  margin-bottom: 4em;
+}
+
 .mv-1 {
   margin-block: 1rem;
 }
@@ -560,10 +610,18 @@ footer {
   font-family: "Croissant One", cursive;
 }
 
+.semibold {
+  font-weight: 600;
+}
+
 .primary-clr {
   color: var(--clr-primary);
 }
 
 .primary-dark-clr {
   color: var(--clr-primary-dark);
+}
+
+.rounded {
+  border-radius: 10px;
 }
