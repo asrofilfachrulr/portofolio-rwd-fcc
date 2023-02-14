@@ -500,8 +500,9 @@ footer > #contact > #contact-tiles img:hover {
 
 footer > #contact > #mail-btn {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   height: 3em;
+  margin-inline: 0;
 }
 
 footer > #contact > #mail-btn > svg {
