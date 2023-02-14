@@ -466,7 +466,7 @@ section:not(#projects) {
 
 footer {
   background: var(--clr-gradient-bg);
-  height: 300px;
+  height: fit-content;
   width: 100%;
 }
 
@@ -518,9 +518,6 @@ footer > #contact > #mail-btn > svg {
   footer > #contact > #contact-tiles img {
     width: 42px;
     height: 42px;
-  }
-  footer > #contact > #mail-btn {
-    max-width: 50%;
   }
 }
 
