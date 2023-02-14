@@ -523,6 +523,11 @@ footer > #contact > #mail-btn > svg {
   }
 }
 
+.img-bg {
+  z-index: -99;
+  width: 150px;
+}
+
 /* utility class */
 
 .absolute {
@@ -598,8 +603,8 @@ footer > #contact > #mail-btn > svg {
   margin-bottom: 2em;
 }
 
-.mb-4 {
-  margin-bottom: 4em;
+.mb-10 {
+  margin-bottom: 10em;
 }
 
 .mv-1 {
