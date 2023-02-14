@@ -32,6 +32,8 @@
     #16038b 91.16%
   );
 
+  --clr-gradient-accent-border: #4d078c;
+
   --clr-gradient-bg: linear-gradient(
     139.8deg,
     #ffe6fe 1.24%,
@@ -261,7 +263,7 @@ section:not(#projects) {
 
 .button-dark {
   color: white;
-  background-color: var(--clr-primary);
+  background: var(--clr-gradient-accent);
 }
 
 .button-dark:hover {
@@ -270,10 +272,9 @@ section:not(#projects) {
 }
 
 .button-light {
-  color: var(--clr-primary);
   background-color: transparent;
   padding-block: calc(0.5em - 1px);
-  border: 1px solid var(--clr-primary);
+  border: 1px solid var(--clr-gradient-accent-border);
 }
 
 .button-light:hover {
