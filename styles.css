@@ -480,7 +480,8 @@ footer > #contact > #contact-tiles {
   grid-template-columns: repeat(4, 1fr);
   justify-items: start;
   align-items: center;
-  max-width: max(400px, 50%);
+  max-width: max(400px, 75%);
+  gap: 1em;
 }
 
 footer > #contact > #contact-tiles img {
@@ -488,6 +489,11 @@ footer > #contact > #contact-tiles img {
   height: 36px;
   aspect-ratio: 1;
   object-fit: fill;
+  transition: 200ms transform ease-in-out;
+}
+
+footer > #contact > #contact-tiles img:hover {
+  transform: scale(1.05);
 }
 
 footer > #contact > #mail-btn {
@@ -504,14 +510,16 @@ footer > #contact > #mail-btn > svg {
 
 @media (min-width: 768px) {
   footer > #contact {
-    padding: 1em;
-    flex-direction: column;
+    align-items: center;
     gap: 1em;
     font-size: 2rem;
   }
   footer > #contact > #contact-tiles img {
     width: 42px;
     height: 42px;
+  }
+  footer > #contact > #mail-btn {
+    max-width: 50%;
   }
 }
 
