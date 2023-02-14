@@ -10,7 +10,7 @@
 
 @media (min-width: 1440px) {
   html {
-    font-size: 36px;
+    font-size: 24px;
   }
 }
 
@@ -50,14 +50,25 @@ html {
   font-size: 16px;
 }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--clr-bg-navbar);
 }
 
 /* Handle */
-*::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--clr-primary);
-  border-radius: 20px;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-primary-dark);
 }
 
 h1,
@@ -109,7 +120,7 @@ li {
 
 .nav-link {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 @media (max-width: 576px) {
@@ -175,10 +186,15 @@ section:not(#projects) {
   padding-inline: var(--section-padding);
 }
 
+@media (min-width: 768px) {
+  section:not(#projects) {
+    padding-inline: 0;
+  }
+}
+
 #welcome-section {
   height: 100vh;
   color: var(--clr-primary);
-  /* font-size: 1.15em; */
   text-align: center;
 }
 
@@ -190,8 +206,6 @@ section:not(#projects) {
   content: url("https://img.icons8.com/metro/16/6900aa/double-down.png");
   position: absolute;
   bottom: 4em;
-  /* width: 24px;
-  height: 24px; */
   animation: vertical-alternate 3s ease-in-out infinite;
   transition: all 200ms;
 }
@@ -203,7 +217,8 @@ section:not(#projects) {
   25% {
     transform: translate(0);
   }
-  75% {
+
+  80% {
     transform: translateY(2rem);
   }
 }
