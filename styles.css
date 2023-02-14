@@ -128,10 +128,19 @@ li {
   border-radius: 5px;
 }
 
-#navbar li:hover,
-#navbar li:active {
+#navbar li:hover {
   background: var(--clr-gradient-accent);
   color: white;
+}
+
+#navbar #contacts-nav-btn {
+  background: var(--clr-gradient-accent);
+  color: white;
+  transition: 200ms all ease-in-out;
+}
+
+#navbar #contacts-nav-btn:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 576px) {
@@ -178,11 +187,11 @@ section:not(#projects) {
 }
 
 #welcome-section::after {
-  content: url("https://img.icons8.com/metro/26/6900aa/double-down.png");
+  content: url("https://img.icons8.com/metro/16/6900aa/double-down.png");
   position: absolute;
   bottom: 4em;
-  width: 24px;
-  height: 24px;
+  /* width: 24px;
+  height: 24px; */
   animation: vertical-alternate 3s ease-in-out infinite;
   transition: all 200ms;
 }
