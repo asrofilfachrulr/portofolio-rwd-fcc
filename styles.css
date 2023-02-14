@@ -296,13 +296,14 @@ section:not(#projects) {
 #projects {
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1.25rem;
 }
 
 @media (min-width: 768px) {
   #projects {
     grid-column: 1/-1;
-    padding-inline-start: 2em;
+    padding-inline-start: 3em;
+    gap: 2rem;
   }
 }
 
@@ -312,7 +313,7 @@ section:not(#projects) {
   background: var(--clr-gradient-bg);
   backdrop-filter: blur(12.5px);
   overflow: scroll hidden;
-  gap: 1.25rem;
+  gap: 2rem;
   padding: 1em 1em;
   border-radius: 20px;
   flex-wrap: nowrap;
