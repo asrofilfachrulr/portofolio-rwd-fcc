@@ -78,7 +78,7 @@ h2,
 h3,
 p,
 span {
-  line-height: 1.6em;
+  line-height: 1.75em;
 }
 
 a {
@@ -227,6 +227,7 @@ section:not(#projects) {
 
 #about p {
   text-align: justify;
+  font-size: 1rem;
   flex-basis: 100%;
 }
 
@@ -239,7 +240,7 @@ section:not(#projects) {
 #about #cv-link {
   display: block;
   margin-inline: auto;
-  min-width: 65%;
+  min-width: fit-content;
   text-align: center;
   padding-block: 0.75em;
 }
