@@ -266,20 +266,14 @@ section:not(#projects) {
   background: var(--clr-gradient-accent);
 }
 
-.button-dark:hover {
-  background-color: var(--clr-primary-dark);
-  color: white;
-}
-
 .button-light {
   background-color: transparent;
   padding-block: calc(0.5em - 1px);
   border: 1px solid var(--clr-gradient-accent-border);
 }
 
-.button-light:hover {
-  background: var(--clr-primary-dark);
-  color: white;
+.button:hover {
+  transform: scale(0.95);
 }
 
 @media (max-width: 576px) {
