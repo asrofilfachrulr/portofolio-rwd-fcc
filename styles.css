@@ -263,6 +263,7 @@ li {
   }
   #navbar li:hover {
     animation: none;
+    translate: 0;
   }
 }
 
