@@ -130,16 +130,17 @@ body {
   cursor: pointer;
   border-radius: 10px;
   background: var(--clr-gradient-accent);
+  z-index: 9999;
 }
 
 #navbar .hamburger-menu::before,
 #navbar .hamburger-menu::after,
 #navbar .hamburger-menu input {
+  cursor: pointer;
   content: "";
   width: var(--bar-width);
   height: var(--bar-height);
   background: var(--clr-bg-navbar);
-  z-index: 9999;
   border-radius: 99999px;
 }
 
@@ -149,6 +150,7 @@ body {
   appearance: none;
   outline: none;
   pointer-events: none;
+  cursor: pointer;
 }
 
 #navbar > #nav-link-container {
@@ -242,23 +244,17 @@ li {
   }
 }
 
-#navbar #contacts-nav-btn {
-  background: var(--clr-gradient-accent);
-  color: white;
+#navbar li {
   transition: 200ms all ease-in-out;
 }
 
-#navbar li:hover {
-  animation: slide 200ms ease-in-out normal;
+#navbar #contacts-nav-btn {
+  background: var(--clr-gradient-accent);
+  color: white;
 }
 
-@keyframes slide {
-  0% {
-    translate: 0;
-  }
-  50% {
-    translate: 10px 0;
-  }
+#navbar li:hover {
+  translate: 10px 0;
 }
 
 @media (min-width: 768px) {
